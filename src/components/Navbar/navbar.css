@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;
+    padding: 0 30px;
+    background: linear-gradient(
+        to right, 
+        #ffffff 0%, 
+        #ffffff 50%, 
+        #94C3D8 50%, 
+        #94C3D8 100%
+    );
+}
+
+.logo img {
+    width: 15em;
+}
+
+.nav-menu {
+    display: flex;
+}
