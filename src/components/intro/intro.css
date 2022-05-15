@@ -1,22 +1,18 @@
 .page {
     display: flex;
     height: 90vh;
-    background-color: #FBFBFB;
-}
+    background-color: #FBFBFB; }
+    .page .left {
+        flex: 1;
+        min-width: 50vw;
+        background-image: url("../../img/main.png"); 
+        background-size: cover; }
+    .page .right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: 0 50px; 
+        margin-top: -10vh;}
+        .page .right .wrapper h3 {
+            padding-right: 50px; }
 
-.left {
-    flex: 1;
-    min-width: 50vw;
-    background-image: url("../../img/main.png"); 
-    background-size: cover;
-}
-
-.right {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding: 0 50px; 
-    margin-top: -10vh;}
-    .right .wrapper h3 {
-        padding-right: 50px;
-    }

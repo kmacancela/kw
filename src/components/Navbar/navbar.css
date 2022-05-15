@@ -1,7 +1,6 @@
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     min-height: 10vh;
     padding: 0 30px;
     background: linear-gradient(
@@ -10,8 +9,15 @@
         #ffffff 50%, 
         #94C3D8 50%, 
         #94C3D8 100%
-    );
-}
+    );}
+    .navbar .left {
+        flex: 1;
+    }
+    .navbar .right {
+        flex: 1;
+        display: flex;
+        justify-content: right;
+    }
 
 .logo img {
     width: 15em;
@@ -19,4 +25,11 @@
 
 .nav-menu {
     display: flex;
-}
+    align-items: center; }
+    .nav-menu .nav-item {
+        padding: 0 0.75em; }
+        .nav-menu .nav-item span {
+            color: #FFFFFF;
+            font-size: 3em; }
+        .nav-menu .nav-item img {
+            width: 2.5em; }

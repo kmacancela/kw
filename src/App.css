@@ -43,5 +43,6 @@ button {
     font-size: 1em;
     letter-spacing: 1px;
     margin: 1em 0;
-    cursor: pointer;
-}
+    cursor: pointer; }
+    button:hover {
+        background-color: #66BE8C; }
