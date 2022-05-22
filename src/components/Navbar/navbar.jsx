@@ -1,9 +1,14 @@
 import "./navbar.css"
-import { Link } from 'react-router-dom'
 import Logo from "../../img/logo.svg"
 import Instagram from "../../img/instagram.svg"
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const onClick = (to) => {
+        navigate(to);
+    }
+
     return (
         <div className="navbar">
             <div className="left">
@@ -15,24 +20,18 @@ const Navbar = () => {
             </div>
             <div className="right">
                 <div className="nav-menu">
-                    <div className="nav-item">
-                        <Link to="/">
-                            <img src={Instagram} alt="call" />
-                        </Link>
+                    <div className="nav-item" onClick={()=>onClick("/hi")}>
+                        <img src={Instagram} alt="call" />
                     </div>
-                    <div className="nav-item">
-                        <Link to="/">
-                            <span className="material-symbols-outlined">
-                                android_dialer
-                            </span>
-                        </Link>
+                    <div className="nav-item" onClick={()=>onClick("/hi")}>
+                        <span className="material-symbols-outlined">
+                            android_dialer
+                        </span>
                     </div>
-                    <div className="nav-item">
-                        <Link to="/">
-                            <span className="material-symbols-outlined">
-                                menu
-                            </span>
-                        </Link>
+                    <div className="nav-item" onClick={()=>onClick("/hi")}>
+                        <span className="material-symbols-outlined">
+                            menu
+                        </span>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import { Fragment } from "react/cjs/react.production.min";
 import "./App.css";
-import Intro from "./components/intro/intro";
-import Navbar from "./components/Navbar/navbar";
+import Intro from "./components/intro/Intro";
+import Navbar from "./components/Navbar/Navbar";
 
 const App = () => {
   return <Fragment><Navbar /><Intro /></Fragment>;

@@ -27,6 +27,7 @@
     display: flex;
     align-items: center; }
     .nav-menu .nav-item {
+        cursor: pointer;
         padding: 0 0.75em; }
         .nav-menu .nav-item span {
             color: #FFFFFF;
