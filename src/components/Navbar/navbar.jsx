@@ -1,7 +1,7 @@
 import "./navbar.css"
 import Logo from "../../img/logo.svg"
 import Instagram from "../../img/instagram.svg"
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -13,9 +13,9 @@ const Navbar = () => {
         <div className="navbar">
             <div className="left">
                 <div className="logo">
-                    <a href="/">
+                    <Link to="/">
                         <img src={Logo} alt="" />
-                    </a>
+                    </Link>
                 </div>
             </div>
             <div className="right">

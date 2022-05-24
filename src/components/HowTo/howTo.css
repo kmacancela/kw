@@ -1,0 +1,28 @@
+#how-to.page {
+    flex-direction: column;
+    align-items: center; }
+.steps-bar {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    width: 57vw; } 
+    .steps-bar .step {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('../../img/circle.svg');
+        width: 3.5em;
+        height: 3.5em; }
+.description {
+    display: flex;
+    justify-content: space-between;
+    width: 70vw;
+    margin-bottom: 3em; }
+    .description .step {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 20em; }
+        .description .step img {
+            border-radius: 0.5em; }
