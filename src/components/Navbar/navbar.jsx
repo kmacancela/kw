@@ -1,5 +1,5 @@
 import "./navbar.css"
-import Logo from "../../img/logo.svg"
+import Logo from "../../img/logo.png"
 import Instagram from "../../img/instagram.svg"
 import { Link, useNavigate } from 'react-router-dom';
 
