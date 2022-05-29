@@ -1,10 +1,16 @@
+import React, { useEffect } from 'react';
 import "./howTo.css"
 import { useNavigate } from 'react-router-dom'
 import Step1 from '../../img/first-step.png'
 import Step2 from '../../img/second-step.png'
 import Step3 from '../../img/third-step.png'
 
-const HowTo = () => {
+const HowTo = ({handleNav}) => {
+
+    useEffect(() => {
+        handleNav(1);
+    });
+    // handleNav(1);
     const navigate = useNavigate();
     const onClick = (to) => {
         navigate(to);

@@ -1,11 +1,20 @@
 import "./intro.css"
 import { useNavigate } from 'react-router-dom'
+import React, { useEffect } from 'react';
 
-const Intro = () => {
+const Intro = ({ handleNav }) => {
     const navigate = useNavigate();
     const onClick = (to) => {
         navigate(to);
     }
+
+    useEffect(() => {
+        handleNav(0);
+        setTimeout(function() {
+            var navbarEl = document.querySelector(".navbar");
+            // if(navbarEl) navbarEl.classList.remove("start");
+        }, 1000);
+    });
     
     return (
         <div className="page">

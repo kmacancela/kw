@@ -18,11 +18,12 @@ body {
     font-weight: 200;
     color: #4A4A4A;
     margin: 0;
+    background-color: #FBFBFB;
 }
 
 h1 {
     font-family: 'BrandonGrotesque-Bold';
-    font-size: 3.5em;
+    font-size: 4em;
     letter-spacing: 1px;
 }
 
@@ -33,7 +34,7 @@ h2 {
 
 h3 {
     font-family: 'BrandonGrotesque-Light';
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 button {

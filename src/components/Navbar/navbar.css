@@ -5,18 +5,56 @@
     padding: 0 30px;
     background: linear-gradient(
         to right, 
-        #ffffff 0%, 
-        #ffffff 50%, 
+        transparent 0%, 
+        transparent 50%, 
         #94C3D8 50%, 
         #94C3D8 100%
-    );}
+    );
+    -webkit-transition: background 300ms linear;
+    -ms-transition: background 300ms linear;
+    transition: background 300ms linear; }
+    .navbar:hover {
+        background-position:-50vw; }
+        .navbar:not(.uno):hover .logo img {
+            content: url("../../img/logo-outline-fff.png"); }
+    .navbar .hidden-bg {
+        position: absolute;
+        width: 100%;
+        min-height: 10vh;
+        background: linear-gradient(
+            to right, 
+            transparent 0%, 
+            transparent 50%, 
+            #94C3D8 50%, 
+            #94C3D8 100%
+        );
+        right: 0;
+        z-index: -1; }
     .navbar .left {
-        flex: 1;
-    }
+        flex: 1;}
     .navbar .right {
         flex: 1;
         display: flex;
-        justify-content: right;
+        justify-content: right; }
+    .navbar.uno {
+        background: linear-gradient(
+        to right, 
+        #4A626C 0%, 
+        /* #4A626C 50%, 
+        #94C3D8 50%,  */
+        #94C3D8 100%
+    );
+    }
+    .navbar.start .hidden-bg {
+        /* background: linear-gradient(
+        to right, 
+        #94C3D8 0%, 
+        #94C3D8 50%, 
+        #94C3D8 50%, 
+        #94C3D8 100%
+    ); */
+    background-position:50vw;
+    transition: background-position 500ms linear;
     }
 
 .logo img {
@@ -31,6 +69,16 @@
         padding: 0 0.75em; }
         .nav-menu .nav-item span {
             color: #FFFFFF;
-            font-size: 3em; }
+            font-size: 2.5em; }
         .nav-menu .nav-item img {
-            width: 2.5em; }
+            width: 2.25em; }
+
+.navbar .logo.hide {
+    opacity: 0;
+}
+.navbar .logo {
+    transition: opacity 500ms ease-in;
+}
+.navbar .logo:not(.hide) {
+    opacity: 1;
+}

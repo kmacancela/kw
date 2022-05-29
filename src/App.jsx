@@ -1,21 +1,20 @@
 import { Fragment } from "react/cjs/react.production.min";
+import React, { useState } from 'react';
 import "./App.css";
 import Intro from "./components/Intro/Intro";
 import Navbar from "./components/Navbar/Navbar";
-import {
-  Routes,
-  Route,
-  Navigate
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HowTo from "./components/HowTo/HowTo";
 
 const App = () => {
+  const [nav, setNav] = useState(0);
+
   return (
     <Fragment>
-      <Navbar />
+      <Navbar nav={nav} />
       <Routes>
-        <Route path="/" element={<Intro />} />
-        <Route path="/how-to" element={<HowTo />} />
+        <Route path="/" element={<Intro handleNav={setNav} />} />
+        <Route path="/how-to" element={<HowTo handleNav={setNav} />} />
       </Routes>
     </Fragment>
   );
