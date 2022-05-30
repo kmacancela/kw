@@ -5,6 +5,7 @@ import Intro from "./components/Intro/Intro";
 import Navbar from "./components/Navbar/Navbar";
 import { Routes, Route } from "react-router-dom";
 import HowTo from "./components/HowTo/HowTo";
+import Contact from "./components/Contact/Contact";
 
 const App = () => {
   const [nav, setNav] = useState(0);
@@ -15,6 +16,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Intro handleNav={setNav} />} />
         <Route path="/how-to" element={<HowTo handleNav={setNav} />} />
+        <Route path="/contact" element={<Contact handleNav={setNav} />} />
       </Routes>
     </Fragment>
   );
