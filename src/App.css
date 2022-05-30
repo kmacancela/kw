@@ -19,6 +19,8 @@ body {
     color: #4A4A4A;
     margin: 0;
     background-color: #FBFBFB;
+    width: 100vw;
+    overflow: hidden;
 }
 
 h1 {

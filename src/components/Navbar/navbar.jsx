@@ -2,8 +2,9 @@ import "./navbar.css"
 import Logo from "../../img/logo.png"
 import Instagram from "../../img/instagram.svg"
 import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
 
-const Navbar = ({nav}) => {
+const Navbar = ({nav, handleNav}) => {
     const navigate = useNavigate();
     const onClick = (to) => {
         navigate(to);
@@ -21,16 +22,16 @@ const Navbar = ({nav}) => {
             console.log("default");
     }
 
-    const handleLoad = () => {
+    useEffect(() => {
         var logoEl = document.getElementsByClassName("logo")[0];
         if(logoEl) logoEl.classList.remove("hide");
-    }
+    }, 1000);
 
     return (
-        <div className="navbar" onLoad={handleLoad}>
+        <div className="navbar">
             <div className="left">
                 <div className="logo hide">
-                    <Link to="/">
+                    <Link to="/" onClick={() => handleNav(0)}>
                         <img src={Logo} alt="" />
                     </Link>
                 </div>

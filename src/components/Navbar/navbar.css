@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     min-height: 10vh;
-    padding: 0 30px;
+    /* padding: 0 30px; */
+    width: 100vw;
     background: linear-gradient(
         to right, 
         transparent 0%, 
@@ -19,7 +20,7 @@
             content: url("../../img/logo-outline-fff.png"); }
     .navbar .hidden-bg {
         position: absolute;
-        width: 100%;
+        width: 100vw;
         min-height: 10vh;
         background: linear-gradient(
             to right, 
@@ -29,6 +30,9 @@
             #94C3D8 100%
         );
         right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
         z-index: -1; }
     .navbar .left {
         flex: 1;}

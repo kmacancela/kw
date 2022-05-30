@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <Fragment>
-      <Navbar nav={nav} />
+      <Navbar nav={nav} handleNav={setNav} />
       <Routes>
         <Route path="/" element={<Intro handleNav={setNav} />} />
         <Route path="/how-to" element={<HowTo handleNav={setNav} />} />
