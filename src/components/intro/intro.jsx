@@ -3,6 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import React, { useEffect } from 'react';
 
 const Intro = ({ handleNav }) => {
+
+    useEffect(() => {
+        handleNav(0);
+    },[]);
+
     const navigate = useNavigate();
     const onClick = (to) => {
         navigate(to);
@@ -11,7 +16,7 @@ const Intro = ({ handleNav }) => {
     useEffect(() => {
             var wrapperEl = document.getElementById("intro").getElementsByClassName("wrapper")[0];
             if(wrapperEl) wrapperEl.classList.remove("hide");
-        }, 1000);
+    }, []);
     
     return (
         <div id="intro" className="page">

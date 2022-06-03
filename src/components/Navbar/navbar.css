@@ -49,6 +49,15 @@
         #94C3D8 100%
     );
     }
+    .navbar.dos {
+        background: linear-gradient(
+        to right, 
+        #4A626C 0%, 
+        /* #4A626C 50%, 
+        #94C3D8 50%,  */
+        #4A626C 100%
+    );
+    }
     .navbar.start .hidden-bg {
         /* background: linear-gradient(
         to right, 

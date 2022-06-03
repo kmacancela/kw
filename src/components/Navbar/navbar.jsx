@@ -10,13 +10,16 @@ const Navbar = ({nav, handleNav}) => {
         navigate(to);
     }
 
-    var navbarEl = document.querySelector(".navbar");;
+    var navbarEl = document.querySelector(".navbar");
     switch(nav) {
         case 0:
             if(navbarEl) navbarEl.classList.remove("uno");
             break;
         case 1:
             if(navbarEl) navbarEl.classList.add("uno");
+            break;
+        case 2:
+            if(navbarEl) navbarEl.classList.add("dos");
             break;
         default:
             console.log("default");
@@ -25,7 +28,7 @@ const Navbar = ({nav, handleNav}) => {
     useEffect(() => {
         var logoEl = document.getElementsByClassName("logo")[0];
         if(logoEl) logoEl.classList.remove("hide");
-    }, 1000);
+    }, []);
 
     return (
         <div className="navbar">
@@ -43,7 +46,7 @@ const Navbar = ({nav, handleNav}) => {
                     </div>
                     <div className="nav-item" onClick={()=>onClick("/hi")}>
                         <span className="material-symbols-outlined">
-                            android_dialer
+                            call
                         </span>
                     </div>
                     <div className="nav-item" onClick={()=>onClick("/hi")}>
