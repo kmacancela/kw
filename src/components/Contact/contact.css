@@ -6,3 +6,8 @@
     #contact h1.title {
         margin-bottom: 0;
     }
+
+.contactForm{
+    width: 40%;
+    text-align: center;
+}
