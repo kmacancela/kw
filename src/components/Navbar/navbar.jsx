@@ -1,28 +1,66 @@
-import "./navbar.css"
-import Logo from "../../img/logo.png"
+import Logo from "../../img/logo.svg"
 import Instagram from "../../img/instagram.svg"
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 
-const Navbar = ({nav, handleNav}) => {
+const Navbar = () => {
+    const Navbar = styled.div`
+        display: flex;
+        align-items: center;
+        min-height: 10vh;
+        width: 100vw;
+        background: linear-gradient(
+            to right, 
+            transparent 0%, 
+            transparent 50%, 
+            #94C3D8 50%, 
+            #94C3D8 100%
+        );
+        -webkit-transition: background 300ms linear;
+        -ms-transition: background 300ms linear;
+        transition: background 300ms linear;
+    `;  
+    const Left = styled.div`
+        flex: 1;
+    `;
+    const Right = styled.div`
+        flex: 1;
+        display: flex;
+        justify-content: right;
+    `;
+    const LogoContainer = styled.div`
+        transition: opacity 500ms ease-in;
+        padding-left: 1.5em
+    `;
+    const LogoSpan = styled.span`
+        font-family: 'BrandonGrotesque-Bold';
+        font-size: 4em;
+        text-decoration: none;
+        color: #6CC994;
+    `;
+    const LogoSpanNext = styled(LogoSpan)`
+        color: #94C3D8;
+    `;
+    const NavMenu = styled.div`
+        display: flex;
+        align-items: center; 
+    `;
+    const NavItem = styled.div`
+        cursor: pointer;
+        padding: 0 0.75em;
+    `;
+    const NavItemSpan = styled.span`
+        color: #FFFFFF;
+        font-size: 2.5em;
+    `;
+    const NavItemImg = styled.img`
+        width: 2.25em;
+    `;
+
     const navigate = useNavigate();
     const onClick = (to) => {
         navigate(to);
-    }
-
-    var navbarEl = document.querySelector(".navbar");
-    switch(nav) {
-        case 0:
-            if(navbarEl) navbarEl.classList.remove("uno");
-            break;
-        case 1:
-            if(navbarEl) navbarEl.classList.add("uno");
-            break;
-        case 2:
-            if(navbarEl) navbarEl.classList.add("dos");
-            break;
-        default:
-            console.log("default");
     }
 
     useEffect(() => {
@@ -31,33 +69,30 @@ const Navbar = ({nav, handleNav}) => {
     }, []);
 
     return (
-        <div className="navbar">
-            <div className="left">
-                <div className="logo hide">
-                    <Link to="/" onClick={() => handleNav(0)}>
-                        <img src={Logo} alt="" />
-                    </Link>
-                </div>
-            </div>
-            <div className="right">
-                <div className="nav-menu">
-                    <div className="nav-item" onClick={()=>onClick("/hi")}>
-                        <img src={Instagram} alt="instagram" />
-                    </div>
-                    <div className="nav-item" onClick={()=>onClick("/hi")}>
-                        <span className="material-symbols-outlined">
+        <Navbar>
+            <Left>
+                <LogoContainer className="logo">
+                    <LogoSpan>kary</LogoSpan><LogoSpanNext>waves</LogoSpanNext>
+                </LogoContainer>
+            </Left>
+            <Right>
+                <NavMenu>
+                    <NavItem onClick={()=>onClick("/hi")}>
+                        <NavItemImg src={Instagram} alt="instagram" />
+                    </NavItem>
+                    <NavItem onClick={()=>onClick("/hi")}>
+                        <NavItemSpan className="material-symbols-outlined">
                             call
-                        </span>
-                    </div>
-                    <div className="nav-item" onClick={()=>onClick("/hi")}>
-                        <span className="material-symbols-outlined">
+                        </NavItemSpan>
+                    </NavItem>
+                    <NavItem onClick={()=>onClick("/hi")}>
+                        <NavItemSpan className="material-symbols-outlined">
                             menu
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div className="hidden-bg"></div>
-        </div>
+                        </NavItemSpan>
+                    </NavItem>
+                </NavMenu>
+            </Right>
+        </Navbar>
     )
 }
 

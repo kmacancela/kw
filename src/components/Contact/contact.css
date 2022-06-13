@@ -16,4 +16,4 @@
         .contactForm form .row {
             display: flex; }
             .contactForm form .col {
-                flex: 1; }
+                width: 50%; }

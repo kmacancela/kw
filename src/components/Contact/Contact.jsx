@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components';
 import "./contact.css"
 
-const Contact = ({handleNav}) => {
-    useEffect(() => {
-        handleNav(2);
-    });
-    
+const Contact = ({handleNav}) => { 
     const navigate = useNavigate();
     const onClick = (to) => {
         navigate(to);
