@@ -8,15 +8,16 @@ const Navbar = () => {
     const Navbar = styled.div`
         display: flex;
         align-items: center;
-        min-height: 10vh;
+        min-height: 8vh;
         width: 100vw;
-        background: linear-gradient(
+        /* background: linear-gradient(
             to right, 
             transparent 0%, 
             transparent 50%, 
             #94C3D8 50%, 
             #94C3D8 100%
-        );
+        ); */
+        background-color: #4A626C;
         -webkit-transition: background 300ms linear;
         -ms-transition: background 300ms linear;
         transition: background 300ms linear;
@@ -30,8 +31,9 @@ const Navbar = () => {
         justify-content: right;
     `;
     const LogoContainer = styled.div`
+        cursor: pointer;
         transition: opacity 500ms ease-in;
-        padding-left: 1.5em
+        padding-left: 1.5em;
     `;
     const LogoSpan = styled.span`
         font-family: 'BrandonGrotesque-Bold';
@@ -71,21 +73,21 @@ const Navbar = () => {
     return (
         <Navbar>
             <Left>
-                <LogoContainer className="logo">
+                <LogoContainer className="logo" onClick={()=>onClick("/")}>
                     <LogoSpan>kary</LogoSpan><LogoSpanNext>waves</LogoSpanNext>
                 </LogoContainer>
             </Left>
             <Right>
                 <NavMenu>
-                    <NavItem onClick={()=>onClick("/hi")}>
+                    <NavItem onClick={()=>onClick("/")}>
                         <NavItemImg src={Instagram} alt="instagram" />
                     </NavItem>
-                    <NavItem onClick={()=>onClick("/hi")}>
+                    <NavItem onClick={()=>onClick("/")}>
                         <NavItemSpan className="material-symbols-outlined">
                             call
                         </NavItemSpan>
                     </NavItem>
-                    <NavItem onClick={()=>onClick("/hi")}>
+                    <NavItem onClick={()=>onClick("/")}>
                         <NavItemSpan className="material-symbols-outlined">
                             menu
                         </NavItemSpan>
