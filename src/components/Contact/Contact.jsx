@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components';
-import "./contact.css"
 import { init, sendForm } from 'emailjs-com';
-init('user_oJthLvb60cvjmkJAL');
+
+init('user_' + process.env.REACT_APP_PUBLIC_KEY);
 
 const Styles = styled.div`
  background: lavender;
@@ -14,38 +14,38 @@ const Styles = styled.div`
  justify-content: initial;
 
  form {
-   background: white;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-around;
-   margin: 0 auto;
-   max-width: 30vw;
-   width: 30vw;
-   padding: 30px 50px;
-   border-radius: 8px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 30vw;
+    width: 30vw;
+    padding: 30px 50px;
+    border-radius: 8px;
  }
 
  input, select, textarea {
-   border: 1px solid #d9d9d9;
-   border-radius: 4px;
-   box-sizing: border-box;
-   padding: 10px;
-   width: 100%;
-   background-color: #FBFBFB;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    background-color: #FBFBFB;
  }
 
  label {
-   color: #3d3d3d;
-   display: block;
-   font-family: sans-serif;
-   font-size: 14px;
-   font-weight: 500;
-   margin-bottom: 5px;
-   margin-top: 2%;
+    color: #3d3d3d;
+    display: block;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 2%;
  }
 
  span {
-     color: red;
+    color: red;
  }
 
  .status-message {
@@ -61,7 +61,7 @@ const Styles = styled.div`
 }
 `;
 
-const Contact = ({handleNav}) => { 
+const Contact = () => { 
     const [statusMessage, setStatusMessage] = useState("");
     const [contactNumber, setContactNumber] = useState("000000");
   
