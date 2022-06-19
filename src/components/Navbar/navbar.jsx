@@ -8,7 +8,7 @@ const Navbar = () => {
     const Navbar = styled.div`
         display: flex;
         align-items: center;
-        min-height: 8vh;
+        height: 8vh;
         width: 100vw;
         /* background: linear-gradient(
             to right, 

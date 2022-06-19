@@ -8,19 +8,27 @@ init('user_' + process.env.REACT_APP_PUBLIC_KEY);
 
 const Styles = styled.div`
  background: lavender;
+ display: block;
  padding: 20px;
  flex-direction: column;
  align-items: center;
  justify-content: initial;
 
+.form-container {
+  height: 60%;
+}
+
  form {
+   position: relative;
+   /* bottom: 2em; */
     background: white;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 0 auto;
-    max-width: 30vw;
-    width: 30vw;
+    max-width: 50%;
+    width: 100%;
+    height: 100%;
     padding: 30px 50px;
     border-radius: 8px;
  }
@@ -32,6 +40,10 @@ const Styles = styled.div`
     padding: 10px;
     width: 100%;
     background-color: #FBFBFB;
+ }
+
+ .page-heading {
+   text-align: center;
  }
 
  label {
@@ -101,37 +113,46 @@ const Contact = () => {
 
     return (
         <Styles className="page">
-            <h1 className="title">We’re equally excited to possibly collaborate!</h1>
-            <h3>Let us know you a little better! Please fill out the form below and we’ll reach back within 24 hours.</h3>
-            {/* <div className="contactForm"> */}
-            <p className='status-message'>{statusMessage}</p>
-                <form id="contactForm" onSubmit={handleSubmit(onSubmit)}>
-                    <input type='hidden' name='contact_number' value={contactNumber} />
-                    <label>First Name</label>
-                    <input {...register("firstName", { required: true})} />
-                    <span>{errors.firstName && "First name is required"}</span>
+            <div className="page-heading">
+              <h1 className="title">We’re equally excited to possibly collaborate!</h1>
+              <h3>Let us know you a little better! Please fill out the form below and we’ll reach back within 24 hours.</h3>
+            </div>
+            <div className="form-container">
+            {/* <p className='status-message'>{statusMessage}</p> */}
+              <form id="contactForm" onSubmit={handleSubmit(onSubmit)}>
+                  <input type='hidden' name='contact_number' value={contactNumber} />
+                  
+                  <div className="row">
+                    <div className="col col-6">
+                      <label>First Name</label>
+                      <input {...register("firstName", { required: true})} />
+                      <span>{errors.firstName && "First name is required"}</span>
+                    </div>
+                    <div className="col col-6">
+                      <label>Last Name</label>
+                      <input {...register("lastName", { required: true})} />
+                      {errors.lastName && "Last name is required"}
+                    </div>
+                  </div>
 
-                    <label>Last Name</label>
-                    <input {...register("lastName", { required: true})} />
-                    {errors.lastName && "Last name is required"}
 
-                    <label>Company Name (optional)</label>
-                    <input {...register("company")} />
+                  <label>Company Name (optional)</label>
+                  <input {...register("company")} />
 
-                    <label>Production size</label>
-                    <select {...register("productionSize", { required: true})}>
-                        <option value="0-50" selected>0-50</option>
-                        <option value="50-100">50-100</option>
-                        <option value="100-500">100-500</option>
-                        <option value="500+">500+</option>
-                    </select>
+                  <label>Production size</label>
+                  <select {...register("productionSize", { required: true})}>
+                      <option value="0-50" selected>0-50</option>
+                      <option value="50-100">50-100</option>
+                      <option value="100-500">100-500</option>
+                      <option value="500+">500+</option>
+                  </select>
 
-                    <label>Extra comments</label>
-                    <textarea {...register("extra")} />
+                  <label>Extra comments</label>
+                  <textarea {...register("extra")} />
 
-                    <button type="submit">Submit</button>
-                </form>
-            {/* </div> */}
+                  <button type="submit">Submit</button>
+              </form>
+            </div>
         </Styles>
     )
 }
