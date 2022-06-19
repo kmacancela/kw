@@ -19,18 +19,17 @@ const Styles = styled.div`
 }
 
  form {
-   position: relative;
-   /* bottom: 2em; */
-    background: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0 auto;
-    max-width: 50%;
-    width: 100%;
-    height: 100%;
-    padding: 30px 50px;
-    border-radius: 8px;
+  position: relative;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 50%;
+  width: 100%;
+  height: 100%;
+  padding: 30px 50px;
+  border-radius: 8px;
  }
 
  input, select, textarea {
