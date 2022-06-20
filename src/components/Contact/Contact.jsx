@@ -113,14 +113,13 @@ const Contact = () => {
     return (
         <Styles className="page">
             <div className="page-heading">
-              <h1 className="title">We’re equally excited to possibly collaborate!</h1>
-              <h3>Let us know you a little better! Please fill out the form below and we’ll reach back within 24 hours.</h3>
+              <h1 className="title">We’re excited to possibly collaborate!</h1>
+              <h3>Let us know you a little better. Please fill out the form below and we’ll reach back within 24 hours.</h3>
             </div>
             <div className="form-container">
             {/* <p className='status-message'>{statusMessage}</p> */}
               <form id="contactForm" onSubmit={handleSubmit(onSubmit)}>
                   <input type='hidden' name='contact_number' value={contactNumber} />
-                  
                   <div className="row">
                     <div className="col col-6">
                       <label>First Name</label>
@@ -133,8 +132,6 @@ const Contact = () => {
                       {errors.lastName && "Last name is required"}
                     </div>
                   </div>
-
-
                   <label>Company Name (optional)</label>
                   <input {...register("company")} />
 

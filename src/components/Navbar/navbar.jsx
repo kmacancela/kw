@@ -1,5 +1,6 @@
 import Logo from "../../img/logo.svg"
 import Instagram from "../../img/instagram.svg"
+import LogoImg from "../../img/logo.png"
 import { Link, useNavigate } from 'react-router-dom';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
@@ -21,6 +22,7 @@ const Navbar = () => {
         -webkit-transition: background 300ms linear;
         -ms-transition: background 300ms linear;
         transition: background 300ms linear;
+        padding: 0.2em 0;
     `;  
     const Left = styled.div`
         flex: 1;
@@ -29,6 +31,7 @@ const Navbar = () => {
         flex: 1;
         display: flex;
         justify-content: right;
+        padding-right: 1em;
     `;
     const LogoContainer = styled.div`
         cursor: pointer;
@@ -47,9 +50,26 @@ const Navbar = () => {
     const NavMenu = styled.div`
         display: flex;
         align-items: center; 
+
+        .call {
+            transform: rotate(-100deg);
+            font-size: 2.5em;
+        }
+
+        span:not(.call) {
+            color: #FFFFFF;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding-left: 0.3em;
+        }
+
+        a {
+            text-decoration: none;
+        }
     `;
     const NavItem = styled.div`
-        cursor: pointer;
+        display: flex;
+        align-items: center;
         padding: 0 0.75em;
     `;
     const NavItemSpan = styled.span`
@@ -74,24 +94,27 @@ const Navbar = () => {
         <Navbar>
             <Left>
                 <LogoContainer className="logo" onClick={()=>onClick("/")}>
-                    <LogoSpan>kary</LogoSpan><LogoSpanNext>waves</LogoSpanNext>
+                    <img src={LogoImg} alt="" width={300} />
                 </LogoContainer>
             </Left>
             <Right>
                 <NavMenu>
-                    <NavItem onClick={()=>onClick("/")}>
+                    {/* <NavItem onClick={()=>onClick("/")}>
                         <NavItemImg src={Instagram} alt="instagram" />
-                    </NavItem>
-                    <NavItem onClick={()=>onClick("/")}>
-                        <NavItemSpan className="material-symbols-outlined">
-                            call
-                        </NavItemSpan>
-                    </NavItem>
-                    <NavItem onClick={()=>onClick("/")}>
+                    </NavItem> */}
+                    <a href="tel:+3475705804">
+                        <NavItem>
+                            <NavItemSpan className="material-symbols-outlined call">
+                                call
+                            </NavItemSpan>
+                            <span>(347) 570 5804</span>
+                        </NavItem>
+                    </a>
+                    {/* <NavItem onClick={()=>onClick("/")}>
                         <NavItemSpan className="material-symbols-outlined">
                             menu
                         </NavItemSpan>
-                    </NavItem>
+                    </NavItem> */}
                 </NavMenu>
             </Right>
         </Navbar>

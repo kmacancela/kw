@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import HowTo from "./components/HowTo/HowTo";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
+import Showroom from "./components/Showroom/Showroom";
 
 const App = () => {
   const [nav, setNav] = useState(0);
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/how-to" element={<HowTo handleNav={setNav} />} />
         <Route path="/contact" element={<Contact handleNav={setNav} />} />
         <Route path="/about" element={<About />} />
+        <Route path="/showroom" element={<Showroom />} />
       </Routes>
     </Fragment>
   );
