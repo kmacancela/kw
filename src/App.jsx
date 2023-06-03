@@ -1,4 +1,4 @@
-import { Fragment } from "react/cjs/react.production.min";
+import { Fragment } from "react";
 import React, { useState } from 'react';
 import "./App.css";
 import Intro from "./components/Intro/Intro";
