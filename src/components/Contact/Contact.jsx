@@ -91,20 +91,23 @@ const Contact = () => {
     const onSubmit = (data) => {
         const form = document.querySelector('#contactForm');
         generateContactNumber();
-        sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, '#contactForm', process.env.REACT_APP_PUBLIC_KEY)
+        sendForm(process.env.REACT_APP_SERVICE_ID, 
+                 process.env.REACT_APP_TEMPLATE_ID, 
+                 '#contactForm', 
+                 process.env.REACT_APP_PUBLIC_KEY)
           .then(function(response) {
             form.reset();
             setStatusMessage("Message sent!");
-            statusMessage.className = "status-message success";
+            // statusMessage.className = "status-message success";
             setTimeout(()=> {
-                statusMessage.className = 'status-message'
+                // statusMessage.className = 'status-message'
             }, 5000)
             console.log('SUCCESS!', response.status, response.text);
           }, function(error) {
             setStatusMessage("Failed to send message! Please try again later.");
-            statusMessage.className = "status-message failure";
+            // statusMessage.className = "status-message failure";
             setTimeout(()=> {
-                statusMessage.className = 'status-message'
+                // statusMessage.className = 'status-message'
             }, 5000)
             console.log('FAILED...', error);
           });
@@ -137,7 +140,7 @@ const Contact = () => {
 
                   <label>Production size</label>
                   <select {...register("productionSize", { required: true})}>
-                      <option value="0-50" selected>0-50</option>
+                      <option value="0-50" defaultValue>0-50</option>
                       <option value="50-100">50-100</option>
                       <option value="100-500">100-500</option>
                       <option value="500+">500+</option>
