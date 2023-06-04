@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import React, { useState } from 'react';
 import "./App.css";
+import "./stylesheets/index.scss";
 import Intro from "./components/Intro/Intro";
 import Navbar from "./components/Navbar/Navbar";
 import { Routes, Route } from "react-router-dom";

@@ -1,76 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useNavigate } from 'react-router-dom'
-import styled from 'styled-components';
 import { init, sendForm } from 'emailjs-com';
 
 init('user_' + process.env.REACT_APP_PUBLIC_KEY);
-
-const Styles = styled.div`
- background: lavender;
- display: block;
- padding: 20px;
- flex-direction: column;
- align-items: center;
- justify-content: initial;
-
-.form-container {
-  height: 60%;
-}
-
- form {
-  position: relative;
-  background: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 0 auto;
-  max-width: 50%;
-  width: 100%;
-  height: 100%;
-  padding: 30px 50px;
-  border-radius: 8px;
- }
-
- input, select, textarea {
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    box-sizing: border-box;
-    padding: 10px;
-    width: 100%;
-    background-color: #FBFBFB;
- }
-
- .page-heading {
-   text-align: center;
- }
-
- label {
-    color: #3d3d3d;
-    display: block;
-    font-family: sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 5px;
-    margin-top: 2%;
- }
-
- span {
-    color: red;
- }
-
- .status-message {
-  opacity: 0;
-}
-.success {
-  opacity: 1;
-  color: green;
-}
-.failure {
-  opacity: 1;
-  color: red;
-}
-`;
 
 const Contact = () => { 
     const [statusMessage, setStatusMessage] = useState("");
@@ -114,7 +47,7 @@ const Contact = () => {
       }
 
     return (
-        <Styles className="page">
+        <div id='contact' className="page">
             <div className="page-heading">
               <h1 className="title">We’re excited to possibly collaborate!</h1>
               <h3>Let us know you a little better. Please fill out the form below and we’ll reach back within 24 hours.</h3>
@@ -152,7 +85,7 @@ const Contact = () => {
                   <button type="submit">Submit</button>
               </form>
             </div>
-        </Styles>
+        </div>
     )
 }
 
